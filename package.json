@@ -1,7 +1,7 @@
 {
-  "name": "react-native-logger",
+  "name": "react-native-logkit",
   "version": "0.1.0",
-  "description": "React Native logger",
+  "description": "A flexible and powerful logging toolkit for React Native apps.",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -32,7 +32,7 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-logger-example",
+    "example": "yarn workspace react-native-logkit-example",
     "test": "jest",
     "typecheck": "tsc",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
@@ -47,15 +47,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IsPriamo/react-native-logger.git"
+    "url": "git+https://github.com/IsPriamo/react-native-logkit.git"
   },
   "author": "Edward A Lopez Mojica <edwardloopez@gmail.com> (https://github.com/IsPriamo)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IsPriamo/react-native-logger/issues"
+    "url": "https://github.com/IsPriamo/react-native-logkit/issues"
   },
-  "homepage": "https://github.com/IsPriamo/react-native-logger#readme",
+  "homepage": "https://github.com/IsPriamo/react-native-logkit#readme",
   "publishConfig": {
+    "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "devDependencies": {
@@ -82,6 +83,8 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
+    "@react-native-firebase/crashlytics": "^14.0.0",
+    "@sentry/react-native": "^2.0.0",
     "react": "*",
     "react-native": "*"
   },

@@ -1,12 +1,28 @@
-import { multiply } from 'react-native-logger';
+import { Logger, LogLevel } from 'react-native-logkit';
 import { Text, View, StyleSheet } from 'react-native';
+import { useEffect } from 'react';
 
-const result = multiply(3, 7);
+Logger.configure({
+  level: LogLevel.DEBUG,
+  enableConsoleLogs: true,
+  enablePerformanceLogs: true,
+  enableMiddlewareLogs: true,
+  formatTimestamp: true,
+  errorsToCapture: [0, 1, 2, 3],
+});
 
 export default function App() {
+  // Example usage of the logger
+  useEffect(() => {
+    Logger.debug('App', 'Debug message');
+    Logger.info('App', 'Info message');
+    Logger.warn('App', 'Warning message');
+    Logger.error('App', 'Error message');
+  }, []);
+
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text> React Native Logger Example </Text>
     </View>
   );
 }
